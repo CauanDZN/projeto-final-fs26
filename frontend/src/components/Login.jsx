@@ -10,7 +10,7 @@ const Login = () => {
     try {
       const response = await api.post('/auth/login', { username, password });
       localStorage.setItem('token', response.data.token);
-      // Redirecionar para o dashboard
+      window.location.href = '/dashboard';
     } catch (error) {
       console.error('Error logging in:', error);
     }
